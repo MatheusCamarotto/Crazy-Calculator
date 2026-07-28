@@ -8,8 +8,9 @@ calc_routes_bp = Blueprint("calc_routes", __name__) #isso nomeia as rotas das ca
 @calc_routes_bp.route("/calculator/1", methods=["POST"])
 def calculator_1():
     calc = Calculator1()
-    calc.calculate(request=request)
-    
-    print(request)
-    print(request.json)# pega o boddy da requisição
-    return jsonify({"Sucess": True}), 200
+    response = calc.calculate(request=request)
+
+        
+    # print(request)
+    # print(request.json)# pega o boddy da requisição
+    return jsonify(response), 200

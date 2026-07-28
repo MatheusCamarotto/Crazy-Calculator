@@ -26,9 +26,11 @@ class Calculator1:
 
         second_process_result = self.__second_process(second_number=splited_number)
 
-        third_process_result = self.__third_process(third_number=splited_number)
+        final_calc_result = first_process_result + second_process_result + splited_number
 
-        final_process_result = self.__final_process(firts_result=first_process_result, second_result=second_process_result, third_result=third_process_result)
+        response = self.__format_response(calc_result=final_calc_result)
+
+        return response
 
     def __validate_body(self, body: Dict) -> float:
         if "number" not in body:
@@ -47,9 +49,10 @@ class Calculator1:
         second_part = (first_part / 5) + 1
         return second_part
 
-    def __third_process(self, third_number: float) -> float:
-        return third_number
-
-    def __final_process(self, first_result: float, second_result: float, third_result: float) -> float:
-        first_part = first_result + second_result + third_result
-        return first_part
+    def __format_response(self, calc_result: float) -> Dict:
+        return {
+            "data": {
+                "Calculator": 1,
+                "result": round(calc_result, 2) #deixa com duas casas decimais
+            }
+        }
