@@ -1,6 +1,6 @@
-import numpy
-from typing import List
+import numpy as np
 
+# from Typing import List -> não é mais necessario por conta da versão do python
 """
 Classe que vai utilizar o numpy(lib externa), esse arquivo serve para padronização
 do projeto. Quem quiser utilizar o desvio padrão vai consultar esse arquivo.
@@ -12,11 +12,12 @@ https://refactoring.guru/design-patterns/facade
 
 class NumpyHandler:
     def __init__(self):
-        self.__np = numpy
-    #Desvio padrão(.std)
-    def standart_derivation(self, numbers:List[float]) -> float:
+        self.__np = np
+
+    # Desvio padrão(.std)
+    def standart_derivation(self, numbers:list[float]) -> float:
         return self.__np.std(numbers)
 
-    def standart_derivation_with_param(self, numbers:List[float]) -> float:
+    def standart_derivation_with_param(self, numbers:list[float]) -> float:
         return self.__np.std(numbers, axis=[])
     

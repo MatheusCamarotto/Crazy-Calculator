@@ -1,6 +1,7 @@
 #Calculadora 1
 from flask import request as FlaskRequest
-from typing import Dict
+
+# from typing import Dict -> não é mais necessario por conta da versão do python
 
 class Calculator1:
     """Função da calculadora 1
@@ -17,7 +18,7 @@ class Calculator1:
     4. Por fim é somado os 3 valores e entregue o resultado.
     """
 
-    def calculate(self, request:FlaskRequest) -> Dict:
+    def calculate(self, request: FlaskRequest) -> dict:
         body = request.json
         input_data = self.__validate_body(body)
         splited_number = input_data / 3
@@ -32,7 +33,7 @@ class Calculator1:
 
         return response
 
-    def __validate_body(self, body: Dict) -> float:
+    def __validate_body(self, body: dict) -> float:
         if "number" not in body:
             raise Exception("body mal formatado!")
 
@@ -49,7 +50,7 @@ class Calculator1:
         second_part = (first_part / 5) + 1
         return second_part
 
-    def __format_response(self, calc_result: float) -> Dict:
+    def __format_response(self, calc_result: float) -> dict:
         return {
             "data": {
                 "Calculator": 1,
