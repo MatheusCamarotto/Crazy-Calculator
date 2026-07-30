@@ -1,5 +1,5 @@
 import numpy as np
-
+from .interfaces.driver_handler_interface import DriverHandlerInterface
 # from Typing import List -> não é mais necessario por conta da versão do python
 """
 Classe que vai utilizar o numpy(lib externa), esse arquivo serve para padronização
@@ -10,11 +10,11 @@ complexo de classes.
 https://refactoring.guru/design-patterns/facade
 """
 
-class NumpyHandler:
+class NumpyHandler(DriverHandlerInterface):
     def __init__(self):
         self.__np = np
 
-    # Desvio padrão(.std)
+    # Desvio padrão(.std())
     def standart_derivation(self, numbers:list[float]) -> float:
         return self.__np.std(numbers)
 

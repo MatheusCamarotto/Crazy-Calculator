@@ -1,8 +1,16 @@
 from flask import request as FlaskRequest
-from src.drivers.numpy_handler import NumpyHandler
 #from typing import Dict, List -> não é mais necessario por conta da versão do python
+from src.drivers.interfaces.driver_handler_interface import DriverHandlerInterface
 
+"""Tipagem driver_handler: DriverHandlerInterface
+A classe DriverHandlerInterface como tipagem da var 'driver_handler', 
+ajuda na procura dos metodos da classe, na qual ajudamos o VScode a 
+compreender isso e sugerir mais facilmente.
+"""
 class Calculator2:
+    def __init__(self, driver_handler: DriverHandlerInterface):
+        self.__driver_handler = driver_handler
+    
     def calculate(self, request: FlaskRequest): # type: ignore
         body = request.json
         input_data = self.__validate_body(body=body)
@@ -18,10 +26,9 @@ class Calculator2:
         return input_data
 
     def __process_data(self, input_data: list[float]) -> float:
-        numpy_handler = NumpyHandler()
         first_process_result = [(num * 11) ** 0.95 for num in input_data]
         print(first_process_result)
-        result = numpy_handler.standart_derivation(first_process_result)
+        result = self.__driver_handler.standart_derivation(first_process_result)
         print(result)
         return 1/result
 
