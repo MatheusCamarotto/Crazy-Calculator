@@ -20,4 +20,7 @@ class NumpyHandler(DriverHandlerInterface):
 
     def standart_derivation_with_param(self, numbers:list[float]) -> float:
         return self.__np.std(numbers, axis=[])
+
+    def variance(self, numbers:list[float]) -> float:
+        return self.__np.var(numbers)
     
