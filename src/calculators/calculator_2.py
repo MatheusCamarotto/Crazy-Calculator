@@ -1,4 +1,5 @@
 from flask import request as FlaskRequest
+
 #from typing import Dict, List -> não é mais necessario por conta da versão do python
 from src.drivers.interfaces.driver_handler_interface import DriverHandlerInterface
 
