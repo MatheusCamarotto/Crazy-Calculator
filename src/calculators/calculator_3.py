@@ -14,7 +14,7 @@ class Calculator3:
         variance = self.__calculate_variance(numbers=input_data)
         multiplication = self.__calculate_multiplication(numbers=input_data)
         self.__verify_results(variance=variance, multiplication=multiplication)
-        formated_response = self.__format_response(multiplication)
+        formated_response = self.__format_response(variance=variance)
         return formated_response
 
     def __validate_body(self, body: dict) -> list[float]:
