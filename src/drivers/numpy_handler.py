@@ -23,4 +23,6 @@ class NumpyHandler(DriverHandlerInterface):
 
     def variance(self, numbers:list[float]) -> float:
         return self.__np.var(numbers)
-    
+
+    def average(self, numbers):
+        return self.__np.mean(numbers)
