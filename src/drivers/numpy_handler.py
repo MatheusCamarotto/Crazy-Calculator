@@ -15,10 +15,10 @@ class NumpyHandler(DriverHandlerInterface):
         self.__np = np
 
     # Desvio padrão(.std())
-    def standart_derivation(self, numbers:list[float]) -> float:
+    def standard_derivation(self, numbers:list[float]) -> float:
         return self.__np.std(numbers)
 
-    def standart_derivation_with_param(self, numbers:list[float]) -> float:
+    def standard_derivation_with_param(self, numbers:list[float]) -> float:
         return self.__np.std(numbers, axis=[])
 
     def variance(self, numbers:list[float]) -> float:

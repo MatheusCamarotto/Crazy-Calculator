@@ -1,5 +1,4 @@
 from .calculator_1 import Calculator1
-from typing import Dict
 from pytest import raises
 
 """pytest
@@ -11,7 +10,7 @@ pytest -s -v
 -v: verbose
 """
 class MockRequest:
-    def __init__(self, body: Dict):
+    def __init__(self, body: dict):
         self.json = body
 
 def test_calculate():

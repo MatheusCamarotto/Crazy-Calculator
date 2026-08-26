@@ -30,7 +30,7 @@ class Calculator2:
     def __process_data(self, input_data: list[float]) -> float:
         first_process_result = [(num * 11) ** 0.95 for num in input_data]
         print(first_process_result)
-        result = self.__driver_handler.standart_derivation(first_process_result)
+        result = self.__driver_handler.standard_derivation(first_process_result)
         print(result)
         return 1/result
 

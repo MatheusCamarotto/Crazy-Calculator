@@ -7,7 +7,7 @@ class MockRequest:
         self.json = body
 
 class MockDriverHandler(DriverHandlerInterface):
-    def standart_derivation(self, numbers: list[float]) -> float:
+    def standard_derivation(self, numbers: list[float]) -> float:
         return 3
 
 #Integração entre NumpyHandler e  Calculator2
